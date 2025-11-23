@@ -1,125 +1,114 @@
+# 🚗 Car Price Prediction Model
 
-# 🚗 Car Price Prediction Model (Streamlit)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-View Live at:https://car-price-predictor-shazim.streamlit.app/
+A modern, interactive web application built with Streamlit that predicts used car prices using machine learning. The application features a clean, responsive UI with real-time predictions based on car specifications.
 
-A modern Streamlit web application that predicts used car prices using a pre-trained Linear Regression model
+## 🌟 Features
 
-![Car Price Model Demo](static/images/demo.png)
-
-✅ Features
-
-- **Interactive Form**: Select company, model, year, fuel type, and kilometers driven
-- **Dynamic Dropdowns**: Model list updates based on selected company
-- **Real-time Prediction**: Instant price predictions without page reloads
-- **Modern UI**: Clean, responsive design with centered layout and custom styling
-- **Price Multiplier**: Enhanced predictions with 3.5x multiplier for better accuracy
+- **Interactive Form Interface**: User-friendly car selection with dynamic dropdowns
+- **Real-time Predictions**: Instant price estimates without page reloads
+- **Modern UI Design**: Responsive layout with gradient backgrounds and smooth animations
+- **Smart Filtering**: Model options update dynamically based on selected company
+- **Input Validation**: Comprehensive error handling and user feedback
 - **Session Management**: Maintains prediction state across interactions
 
-🛠 Tech Stack
+## 🚀 Quick Start
 
-- **Frontend & Backend**: Streamlit
-- **Machine Learning**: scikit-learn (Linear Regression)
-- **Data Processing**: pandas, numpy
-- **Dataset**: Cleaned_car_data.csv, pre-trained LinearRegressionModel.pkl
-- **Styling**: Custom CSS with modern design elements
+### Prerequisites
 
-📂 Project Structure
-
-```
-Car_prediction_Model/
-├── streamlit_app.py          # Main Streamlit application
-├── Cleaned_car_data.csv      # Dataset for dropdown options
-├── LinearRegressionModel.pkl # Pre-trained ML model
-├── quikr_car.csv            # Original dataset
-├── requirements.txt         # Python dependencies
-├── README.md               # Project documentation
-└── main.ipynb              # Jupyter notebook (if available)
-```
-
-▶ Getting Started
-
-**Prerequisites**
-- Python 3.8+ (recommended: 3.8–3.11)
+- Python 3.8 or higher
 - pip package manager
 
-**Installation & Run**
-```bash
-# Install dependencies
-pip install -r requirements.txt
+### Installation
 
-# Run the Streamlit application
-streamlit run streamlit_app.py
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd car-price-predictor
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the application**
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+
+4. **Open your browser** and navigate to `http://localhost:8501`
+
+## 📖 Usage Guide
+
+1. **Select Car Company**: Choose from available car manufacturers
+2. **Pick Model**: Select specific car model (filtered by company)
+3. **Choose Year**: Select manufacturing year
+4. **Select Fuel Type**: Pick fuel type (Petrol, Diesel, CNG, etc.)
+5. **Enter Kilometers**: Input total distance driven
+6. **Get Prediction**: Click "Predict Price" for instant estimate
+
+## 🛠️ Technology Stack
+
+| Component | Technology |
+|-----------|------------|
+| **Frontend** | Streamlit |
+| **Backend** | Python |
+| **ML Model** | Linear Regression (scikit-learn) |
+| **Data Processing** | pandas, numpy |
+| **Styling** | Custom CSS |
+
+## 📁 Project Structure
+
+```
+car-price-predictor/
+├── streamlit_app.py          # Main application file
+├── LinearRegressionModel.pkl # Pre-trained ML model
+├── Cleaned_car_data.csv      # Dataset for predictions
+├── requirements.txt          # Python dependencies
+└── README.md                # Project documentation
 ```
 
-Open the provided URL (usually http://localhost:8501) in your browser.
+## 🔧 Model Information
 
-🎨 UI Features
+- **Algorithm**: Linear Regression
+- **Training Data**: Cleaned car dataset with features like company, model, year, fuel type, and kilometers
+- **Accuracy Enhancement**: 3.5x multiplier applied for improved price estimates
+- **Input Features**: Car company, model, manufacturing year, fuel type, kilometers driven
 
-- **Centered Layout**: Input form is centered with responsive columns
-- **Custom Styling**: Rounded corners, custom colors, and hover effects
-- **Red Prediction Button**: Eye-catching red button with full-width design
-- **Success/Info Messages**: Clean prediction display with car details
-- **Responsive Design**: Works on desktop and mobile devices
+## 📊 Dependencies
 
-🔧 Key Components
-
-- **Model Loading**: Cached model loading with `@st.cache_resource`
-- **Dynamic Dropdowns**: Company-dependent model selection
-- **Input Validation**: Ensures all fields are filled before prediction
-- **Error Handling**: Graceful error messages for failed predictions
-- **Session State**: Maintains prediction results across interactions
-
-📊 Prediction Process
-
-1. User selects car details (company, model, year, fuel type, kilometers)
-2. Model predicts base price using Linear Regression
-3. Price is multiplied by 3.5 for enhanced accuracy
-4. Result displayed with car details in a clean format
-
-❗ Troubleshooting
-
-**ModuleNotFoundError: No module named 'streamlit'**
-```bash
-pip install -r requirements.txt
+```txt
+streamlit>=1.28.0
+pandas>=1.5.0
+numpy>=1.21.0
+scikit-learn>=1.1.0
+pickle-mixin>=1.0.2
 ```
 
-**CSV/model file not found**
-→ Ensure `Cleaned_car_data.csv` and `LinearRegressionModel.pkl` exist in the project root.
+## 🤝 Contributing
 
-**Port 8501 already in use**
-→ Streamlit will automatically find an available port or you can specify one:
-```bash
-streamlit run streamlit_app.py --server.port 8502
-```
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-**Version compatibility issues**
-→ If you see scikit-learn version warnings, ensure you have the correct version:
-```bash
-pip install scikit-learn>=1.7.1
-```
+## 📝 License
 
-🚀 Deployment
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**Streamlit Cloud (Recommended)**
-1. Push your code to GitHub
-2. Connect your repository to [Streamlit Cloud](https://streamlit.io/cloud)
-3. Deploy with one click
+## 👨💻 Author
 
-**Local Development**
-```bash
-streamlit run streamlit_app.py
-```
+**Ali Hamza**
+- Email: [ihamzaali06@gmail.com](mailto:ihamzaali06@gmail.com)
+- GitHub: [@alihamza](https://github.com/alihamza)
 
-📝 Notes
+---
 
-- The ML model is pre-loaded from `LinearRegressionModel.pkl` at app startup
-- UI uses custom CSS for modern styling and better user experience
-- Price predictions include a 3.5x multiplier for enhanced accuracy
-- Session state management ensures smooth user interactions
-
-👨‍💻 Made with ❤️ By Shazim Javed
-
-📜 License
-
-This project is for educational and demonstration purposes only.
+<div align="center">
+  <strong>Made with ❤️ by Ali Hamza</strong>
+</div>
